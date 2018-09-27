@@ -1,14 +1,29 @@
 package ro.jademy.carrental;
 
+import ro.jademy.carrental.cars.Car;
+import ro.jademy.carrental.cars.Dacia;
+import ro.jademy.carrental.persons.Salesman;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Shop {
     // Q: what fields and methods should this class contain?
 
-    public boolean login(String username, String password) {
+    private ArrayList<Salesman> salesmensList = new ArrayList<>();
+    private ArrayList<Car> availableCars = new ArrayList<>();
+    private ArrayList<Car> rentedCars = new ArrayList<>();
+    private Scanner scan = new Scanner(System.in);
 
-        // TODO: implement a basic user login
+    public Shop() {
+        salesmensList.add(new Salesman("Gigi", "Gigel", "user1", "1111"));
+        salesmensList.add(new Salesman("Ion", "Ionut", "user2", "2222"));
+        salesmensList.add(new Salesman("Vasile", "Vali", "user3", "3333"));
 
-        return false;
+
     }
+
+
 
     public void showMenu() {
 
@@ -31,14 +46,14 @@ public class Shop {
         System.out.println("1. Filter by make");
         System.out.println("2. Filter by model");
         System.out.println("3. Filter by budget");
-        // TODO: add additional filter methods based on car specs
+        // TODO: add additional filter methods based on cars specs
 
         System.out.println("4. Back to previous menu");
 
     }
 
     public void calculatePrice(int numberOfDays) {
-        // TODO: apply a discount to the base price of a car based on the number of rental days
+        // TODO: apply a discount to the base price of a cars based on the number of rental days
         // TODO: document the implemented discount algorithm
 
         // TODO: for a more difficult algorithm, change this method to include date intervals and take into account
@@ -46,4 +61,28 @@ public class Shop {
 
         // Q: what should be the return type of this method?
     }
+
+    private boolean login(String username, String password) {
+        // TODO: implement a basic user login
+        for (Salesman salesman : salesmensList) {
+            if (username.equals(salesman.getUsername()) && password.equals(salesman.getPassword())) {
+                System.out.println(username + " successfully logged in.");
+                return true;
+            }
+        }
+        System.out.println("Wrong username or password, try again.");
+        return false;
+    }
+
+    private void loginMenu() {
+        boolean loginSuccessfull;
+        do {
+            System.out.println("Username:");
+            String username = scan.nextLine();
+            System.out.println("Password:");
+            String password = scan.nextLine();
+            loginSuccessfull = login(username, password);
+        } while (!loginSuccessfull);
+    }
+
 }
