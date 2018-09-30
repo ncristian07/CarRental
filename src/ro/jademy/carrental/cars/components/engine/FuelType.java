@@ -6,13 +6,13 @@ public class FuelType {
     private String gasoline;
     private String diesel;
     private String hybrid;
-    private String electric;
+    private String electronic;
 
-    public FuelType (String gasoline, String diesel, String hybrid, String electric){
-        this.gasoline=gasoline;
-        this.diesel=diesel;
-        this.hybrid=hybrid;
-        this.electric=electric;
+    public FuelType(String gasoline, String diesel, String hybrid, String electronic) {
+        this.gasoline = gasoline;
+        this.diesel = diesel;
+        this.hybrid = hybrid;
+        this.electronic = electronic;
     }
 
     public String getGasoline() {
@@ -27,7 +27,7 @@ public class FuelType {
         return hybrid;
     }
 
-    public String getElectric() {
-        return electric;
+    public String getElectronic() {
+        return electronic;
     }
 }

@@ -2,7 +2,7 @@ package ro.jademy.carrental.cars;
 
 import com.sun.xml.internal.ws.api.pipe.Engine;
 import ro.jademy.carrental.cars.components.BodyKit;
-import ro.jademy.carrental.cars.components.gearbox.GearBox;
+import ro.jademy.carrental.cars.components.gearbox.GearBoxType;
 
 import java.math.BigDecimal;
 
@@ -15,22 +15,21 @@ public abstract class Car {
     private String model;
     private BodyKit bodyKit;
     private Engine engine;
-    private GearBox gearBox;
+    private GearBoxType gearBox;
     private Integer year;
     private BigDecimal basePrice;
     private StatusCar statusCar;
 
-    public Car (String make, String model,BodyKit bodyKit, Engine engine, GearBox gearBox,Integer year, BigDecimal basePrice,StatusCar statusCar){
-        this.make=make;
-        this.model=model;
-        this.bodyKit=bodyKit;
-        this.engine=engine;
-        this.gearBox=gearBox;
-        this.year=year;
-        this.basePrice=basePrice;
-        this.statusCar=statusCar;
+    public Car(String make, String model, BodyKit bodyKit, Engine engine, GearBoxType gearBox, Integer year, BigDecimal basePrice, StatusCar statusCar) {
+        this.make = make;
+        this.model = model;
+        this.bodyKit = bodyKit;
+        this.engine = engine;
+        this.gearBox = gearBox;
+        this.year = year;
+        this.basePrice = basePrice;
+        this.statusCar = statusCar;
     }
-
 
 
     //getters
@@ -51,7 +50,7 @@ public abstract class Car {
         return engine;
     }
 
-    public GearBox getGearBox() {
+    public GearBoxType getGearBox() {
         return gearBox;
     }
 
