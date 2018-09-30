@@ -1,7 +1,6 @@
 package ro.jademy.carrental;
 
 import ro.jademy.carrental.cars.Car;
-import ro.jademy.carrental.cars.Dacia;
 import ro.jademy.carrental.persons.Salesman;
 
 import java.util.ArrayList;
@@ -23,21 +22,16 @@ public class Shop {
 
     }
 
+    public ArrayList<Salesman> getSalesmensList() {
+        return salesmensList;
+    }
 
+    public ArrayList<Car> getAvailableCars() {
+        return availableCars;
+    }
 
-    public void showMenu() {
-
-        System.out.println(" -----------------------------------------------");
-        System.out.println("|    Welcome to the Jademy Car Rental Service   |");
-        System.out.println(" -----------------------------------------------");
-        System.out.println();
-        System.out.println("                    MAIN MENU                   ");
-        System.out.println("1. List all cars");
-        System.out.println("2. List available cars");
-        System.out.println("3. List rented cars");
-        System.out.println("4. Check income");
-        System.out.println("5. Logout");
-        System.out.println("6. Exit");
+    public ArrayList<Car> getRentedCars() {
+        return rentedCars;
     }
 
     public void showListMenuOptions() {
@@ -62,8 +56,20 @@ public class Shop {
         // Q: what should be the return type of this method?
     }
 
-    private boolean login(String username, String password) {
-        // TODO: implement a basic user login
+
+    private void loginMenu() {
+        boolean loginSuccessfull;
+        do {
+            System.out.println("Username:");
+            String username = scan.nextLine();
+            System.out.println("Password:");
+            String password = scan.nextLine();
+            loginSuccessfull = loginUser(username, password);
+        } while (!loginSuccessfull);
+    }
+
+    private boolean loginUser(String username, String password) {
+        // TODO: implement a basic user loginUser
         for (Salesman salesman : salesmensList) {
             if (username.equals(salesman.getUsername()) && password.equals(salesman.getPassword())) {
                 System.out.println(username + " successfully logged in.");
@@ -73,16 +79,18 @@ public class Shop {
         System.out.println("Wrong username or password, try again.");
         return false;
     }
+    public void showMenu() {
 
-    private void loginMenu() {
-        boolean loginSuccessfull;
-        do {
-            System.out.println("Username:");
-            String username = scan.nextLine();
-            System.out.println("Password:");
-            String password = scan.nextLine();
-            loginSuccessfull = login(username, password);
-        } while (!loginSuccessfull);
+        System.out.println(" -----------------------------------------------");
+        System.out.println("|    Welcome to the Jademy Car Rental Service   |");
+        System.out.println(" -----------------------------------------------");
+        System.out.println();
+        System.out.println("                    MAIN MENU                   ");
+        System.out.println("1. List all cars");
+        System.out.println("2. List available cars");
+        System.out.println("3. List rented cars");
+        System.out.println("4. Check income");
+        System.out.println("5. Logout");
+        System.out.println("6. Exit");
     }
-
 }

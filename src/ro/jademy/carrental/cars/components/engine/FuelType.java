@@ -1,16 +1,33 @@
 package ro.jademy.carrental.cars.components.engine;
 
 
-public enum FuelType {
-    GASOLINE("Gasoline"), DIESEL("Diesel"), ELECTRIC("Electric");
+public class FuelType {
 
-    private String fuelName;
+    private String gasoline;
+    private String diesel;
+    private String hybrid;
+    private String electric;
 
-    FuelType(String fuelName) {
-        this.fuelName = fuelName;
+    public FuelType (String gasoline, String diesel, String hybrid, String electric){
+        this.gasoline=gasoline;
+        this.diesel=diesel;
+        this.hybrid=hybrid;
+        this.electric=electric;
     }
 
-    public String getFuelName() {
-        return fuelName;
+    public String getGasoline() {
+        return gasoline;
+    }
+
+    public String getDiesel() {
+        return diesel;
+    }
+
+    public String getHybrid() {
+        return hybrid;
+    }
+
+    public String getElectric() {
+        return electric;
     }
 }

@@ -18,9 +18,9 @@ public abstract class Car {
     private GearBox gearBox;
     private Integer year;
     private BigDecimal basePrice;
-    private Boolean isCarRented;
+    private StatusCar statusCar;
 
-    public Car(String make,String model, BodyKit bodyKit,Engine engine,GearBox gearBox,Integer year,BigDecimal basePrice) {
+    public Car (String make, String model,BodyKit bodyKit, Engine engine, GearBox gearBox,Integer year, BigDecimal basePrice,StatusCar statusCar){
         this.make=make;
         this.model=model;
         this.bodyKit=bodyKit;
@@ -28,58 +28,50 @@ public abstract class Car {
         this.gearBox=gearBox;
         this.year=year;
         this.basePrice=basePrice;
-        this.isCarRented = false;
+        this.statusCar=statusCar;
     }
 
 
 
-    public void setMake(String make) {
-        this.make = make;
+    //getters
+
+    public String getMake() {
+        return make;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public String getModel() {
+        return model;
     }
 
-    public void setBodyKit(BodyKit bodyKit) {
-        this.bodyKit = bodyKit;
+    public BodyKit getBodyKit() {
+        return bodyKit;
     }
 
-    public void setEngine(Engine engine) {
-        this.engine = engine;
+    public Engine getEngine() {
+        return engine;
     }
 
-    public void setGearBox(GearBox gearBox) {
-        this.gearBox = gearBox;
+    public GearBox getGearBox() {
+        return gearBox;
     }
 
-    public void setYear(Integer year) {
-        this.year = year;
+    public Integer getYear() {
+        return year;
     }
 
-    public void setBasePrice(BigDecimal basePrice) {
-        this.basePrice = basePrice;
+    public BigDecimal getBasePrice() {
+        return basePrice;
     }
 
-    // Q: how can we better represent the cars type?
-        public String carType; // coupe, sedan, hatchback, convertible, wagon, SUV
-
-        // Q: how can we better represent the motor type?
-        public String fuelType; // diesel, gasoline, alternative
-
-        public Integer doorNumber;
-
-        public String color;
-
-        // Q: how can we better represent the transmission type?
-        public String transmissionType; // automatic, manual
-
-        // Q: how can we better represent the engine?
-        public String getFuelType;
-
-        // Q: how can we better represent money value?
-
-        // Q: do we need a constructor other than the default one?
-        // Q: how can we better protect the cars data?
+    public StatusCar getStatusCar() {
+        return statusCar;
     }
+// Q: how can we better represent the cars type?
+    // Q: how can we better represent the motor type?
+    // Q: how can we better represent the transmission type?
+    // Q: how can we better represent the engine?
+    // Q: how can we better represent money value?
+    // Q: do we need a constructor other than the default one?
+    // Q: how can we better protect the cars data?
+}
 
