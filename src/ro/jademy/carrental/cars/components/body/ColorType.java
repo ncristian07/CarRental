@@ -1,32 +1,23 @@
 package ro.jademy.carrental.cars.components.body;
 
-public class ColorType {
 
-    private String whiteColor;
-    private String blackColor;
-    private String greyColor;
-    private String redColor;
+    public enum ColorType {
+        WHITE("White"),
+        BLACK("Black"),
+        RED("Red"),
+        YELLOW("Yellow"),
+        SILVER("Silver"),
+        BLUE("Blue"),
+        DARKBLUE("Dark blue");
 
-    public ColorType(String whiteColor, String blackColor, String greyColor, String redColor) {
-        this.whiteColor = whiteColor;
-        this.blackColor = blackColor;
-        this.greyColor = greyColor;
-        this.redColor = redColor;
+        private String colorType;
+
+        ColorType(String color) {
+            this.colorType = color;
+        }
+
+        public String getName() {
+            return colorType;
+        }
     }
 
-    public String getWhiteColor() {
-        return whiteColor;
-    }
-
-    public String getBlackColor() {
-        return blackColor;
-    }
-
-    public String getGreyColor() {
-        return greyColor;
-    }
-
-    public String getRedColor() {
-        return redColor;
-    }
-}

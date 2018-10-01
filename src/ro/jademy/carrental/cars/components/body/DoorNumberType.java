@@ -1,26 +1,22 @@
 package ro.jademy.carrental.cars.components.body;
 
-public class DoorNumberType {
+public enum DoorNumberType {
+    TWO(2),
+    FOUR(4),
+    SIX(6);
 
-    private int twoDoors;
-    private int fourDoors;
-    private int sixDoors;
+    private final Integer numberOfDoors;
 
-    public DoorNumberType(int twoDoors, int fourDoors, int sixDoors) {
-        this.twoDoors = twoDoors;
-        this.fourDoors = fourDoors;
-        this.sixDoors = sixDoors;
+    DoorNumberType(int numberOfDoors) {
+        this.numberOfDoors = numberOfDoors;
     }
 
-    public int getTwoDoors() {
-        return twoDoors;
+    public int getNumberOfDoors() {
+        return numberOfDoors.intValue();
     }
 
-    public int getFourDoors() {
-        return fourDoors;
-    }
-
-    public int getSixDoors() {
-        return sixDoors;
+    @Override
+    public String toString() {
+        return "numberOfDoors";
     }
 }

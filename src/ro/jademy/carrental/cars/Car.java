@@ -31,6 +31,40 @@ public abstract class Car {
         this.statusCar = statusCar;
     }
 
+    //setters
+
+    public void setMake(String make) {
+        this.make = make;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setBodyKit(BodyKit bodyKit) {
+        this.bodyKit = bodyKit;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public void setGearBox(GearBoxType gearBox) {
+        this.gearBox = gearBox;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
+    }
+
+    public void setBasePrice(BigDecimal basePrice) {
+        this.basePrice = basePrice;
+    }
+
+    public void setStatusCar(StatusCar statusCar) {
+        this.statusCar = statusCar;
+    }
+
 
     //getters
 
@@ -65,7 +99,9 @@ public abstract class Car {
     public StatusCar getStatusCar() {
         return statusCar;
     }
-// Q: how can we better represent the cars type?
+
+
+    // Q: how can we better represent the cars type?
     // Q: how can we better represent the motor type?
     // Q: how can we better represent the transmission type?
     // Q: how can we better represent the engine?

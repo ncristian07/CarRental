@@ -6,18 +6,20 @@ import ro.jademy.carrental.cars.components.body.DoorNumberType;
 
 public class BodyKit {
 
-    private BodyKitType type;
+    private BodyKitType bodyType;
     private ColorType colorType;
     private DoorNumberType doorNumberType;
 
+
     public BodyKit(BodyKitType type, ColorType colorType, DoorNumberType doorNumberType) {
         this.colorType = colorType;
-        this.type = type;
+        this.bodyType = type;
         this.doorNumberType = doorNumberType;
     }
 
-    public BodyKitType getType() {
-        return type;
+
+    public BodyKitType getBodyType() {
+        return bodyType;
     }
 
     public ColorType getColorType() {

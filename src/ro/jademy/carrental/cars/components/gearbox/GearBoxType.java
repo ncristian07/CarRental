@@ -1,20 +1,17 @@
 package ro.jademy.carrental.cars.components.gearbox;
 
-public class GearBoxType {
+public enum GearBoxType {
+    MANUAL("Manual"),
+    AUTOMATIC("Automatic"),
+    SWITCHABLE("Swichable");
 
-    private String manual;
-    private String automatic;
+    private String transmission;
 
-    public GearBoxType(String manual, String automatic){
-        this.manual = manual;
-        this.automatic=automatic;
+    GearBoxType(String transmission) {
+        this.transmission = transmission;
     }
 
-    public String getManual() {
-        return manual;
-    }
-
-    public String getAutomatic() {
-        return automatic;
+    public String getName() {
+        return transmission;
     }
 }

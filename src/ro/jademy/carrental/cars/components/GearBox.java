@@ -1,23 +1,15 @@
 package ro.jademy.carrental.cars.components;
 
 import ro.jademy.carrental.cars.components.gearbox.GearBoxType;
-import ro.jademy.carrental.cars.components.gearbox.Transmission;
 
 public class GearBox {
+    private GearBoxType type;
 
-    private GearBoxType gearBoxType;
-    private Transmission transmission;
-
-    public GearBox(GearBoxType gearBoxType, Transmission transmission) {
-        this.gearBoxType = gearBoxType;
-        this.transmission = transmission;
+    public GearBox(GearBoxType type) {
+        this.type = type;
     }
 
-    public GearBoxType getGearBoxType() {
-        return gearBoxType;
-    }
-
-    public Transmission getTransmission() {
-        return transmission;
+    public GearBoxType getType() {
+        return type;
     }
 }
