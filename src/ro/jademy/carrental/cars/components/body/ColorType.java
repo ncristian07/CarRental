@@ -5,10 +5,8 @@ package ro.jademy.carrental.cars.components.body;
         WHITE("White"),
         BLACK("Black"),
         RED("Red"),
-        YELLOW("Yellow"),
         SILVER("Silver"),
-        BLUE("Blue"),
-        DARKBLUE("Dark blue");
+        BLUE("Blue");
 
         private String colorType;
 

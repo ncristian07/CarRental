@@ -1,7 +1,9 @@
 package ro.jademy.carrental.cars;
 
-import com.sun.xml.internal.ws.api.pipe.Engine;
+
+import ro.jademy.carrental.cars.components.GearBox;
 import ro.jademy.carrental.cars.components.BodyKit;
+import ro.jademy.carrental.cars.components.Engine;
 import ro.jademy.carrental.cars.components.gearbox.GearBoxType;
 
 import java.math.BigDecimal;
@@ -15,20 +17,25 @@ public abstract class Car {
     private String model;
     private BodyKit bodyKit;
     private Engine engine;
-    private GearBoxType gearBox;
+    private GearBox boxType;
     private Integer year;
     private BigDecimal basePrice;
-    private StatusCar statusCar;
+    private Boolean rented;
 
-    public Car(String make, String model, BodyKit bodyKit, Engine engine, GearBoxType gearBox, Integer year, BigDecimal basePrice, StatusCar statusCar) {
+
+    public Car(String make, String model, BodyKit bodyKit, Engine engine, GearBox gearBox, Integer year, BigDecimal basePrice, Boolean rented) {
         this.make = make;
         this.model = model;
         this.bodyKit = bodyKit;
         this.engine = engine;
-        this.gearBox = gearBox;
+        this.boxType = gearBox;
         this.year = year;
         this.basePrice = basePrice;
-        this.statusCar = statusCar;
+        this.rented = rented;
+    }
+
+    public Car(){
+
     }
 
     //setters
@@ -49,8 +56,8 @@ public abstract class Car {
         this.engine = engine;
     }
 
-    public void setGearBox(GearBoxType gearBox) {
-        this.gearBox = gearBox;
+    public void setBoxType(GearBox boxType) {
+        this.boxType = boxType;
     }
 
     public void setYear(Integer year) {
@@ -61,12 +68,25 @@ public abstract class Car {
         this.basePrice = basePrice;
     }
 
-    public void setStatusCar(StatusCar statusCar) {
-        this.statusCar = statusCar;
+    @Override
+    public String toString() {
+        return "Car{" +
+                "Make='" + make + '\'' +
+                ", Model='" + model + '\'' +
+                ", BodyKit=" + bodyKit +
+                ", Engine=" + engine +
+                ", BoxType=" + boxType +
+                ", Year=" + year +
+                ", BasePrice=" + basePrice +
+                ", Rented=" + rented +
+                '}';
     }
 
-
     //getters
+
+    public Boolean getRented() {
+        return rented;
+    }
 
     public String getMake() {
         return make;
@@ -84,8 +104,8 @@ public abstract class Car {
         return engine;
     }
 
-    public GearBoxType getGearBox() {
-        return gearBox;
+    public GearBox getBoxType() {
+        return boxType;
     }
 
     public Integer getYear() {
@@ -96,12 +116,7 @@ public abstract class Car {
         return basePrice;
     }
 
-    public StatusCar getStatusCar() {
-        return statusCar;
-    }
-
-
-    // Q: how can we better represent the cars type?
+// Q: how can we better represent the cars type?
     // Q: how can we better represent the motor type?
     // Q: how can we better represent the transmission type?
     // Q: how can we better represent the engine?

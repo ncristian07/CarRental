@@ -11,9 +11,9 @@ public class BodyKit {
     private DoorNumberType doorNumberType;
 
 
-    public BodyKit(BodyKitType type, ColorType colorType, DoorNumberType doorNumberType) {
+    public BodyKit(BodyKitType bodyType, ColorType colorType, DoorNumberType doorNumberType) {
         this.colorType = colorType;
-        this.bodyType = type;
+        this.bodyType = bodyType;
         this.doorNumberType = doorNumberType;
     }
 

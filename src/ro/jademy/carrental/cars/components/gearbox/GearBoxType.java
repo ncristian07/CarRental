@@ -2,8 +2,7 @@ package ro.jademy.carrental.cars.components.gearbox;
 
 public enum GearBoxType {
     MANUAL("Manual"),
-    AUTOMATIC("Automatic"),
-    SWITCHABLE("Swichable");
+    AUTOMATIC("Automatic");
 
     private String transmission;
 

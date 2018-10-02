@@ -1,15 +1,27 @@
 package ro.jademy.carrental;
 
+import ro.jademy.carrental.cars.Audi;
+import ro.jademy.carrental.cars.DaciaLogan;
 import ro.jademy.carrental.cars.Car;
+import ro.jademy.carrental.cars.components.BodyKit;
+import ro.jademy.carrental.cars.components.Engine;
+import ro.jademy.carrental.cars.components.body.BodyKitType;
+import ro.jademy.carrental.cars.components.body.ColorType;
+import ro.jademy.carrental.cars.components.body.DoorNumberType;
+import ro.jademy.carrental.cars.components.engine.FuelType;
+import ro.jademy.carrental.cars.components.gearbox.GearBoxType;
 import ro.jademy.carrental.persons.Salesman;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Shop {
     // Q: what fields and methods should this class contain?
 
     private ArrayList<Salesman> salesmensList = new ArrayList<>();
+    private ArrayList<Car> cars = new ArrayList<>();
     private ArrayList<Car> availableCars = new ArrayList<>();
     private ArrayList<Car> rentedCars = new ArrayList<>();
     private Scanner scan = new Scanner(System.in);
@@ -19,7 +31,10 @@ public class Shop {
         salesmensList.add(new Salesman("Ion", "Ionut", "user2", "2222"));
         salesmensList.add(new Salesman("Vasile", "Vali", "user3", "3333"));
 
-
+        cars.add(new DaciaLogan("Dacia","Logan", new BodyKit(BodyKitType.SEDAN,ColorType.BLACK,DoorNumberType.FOUR),new Engine("1.2", "75HP",FuelType.GASOLINE),GearBoxType.MANUAL,2008, new BigDecimal(3000),true));
+        cars.add(new DaciaLogan("Dacia","Logan", new BodyKit(BodyKitType.SEDAN,ColorType.RED,DoorNumberType.FOUR),new Engine("1.5 DCI", "140HP",FuelType.DIESEL),GearBoxType.MANUAL,2012, new BigDecimal(6000),true));
+        cars.add(new Audi("Audi","A4",new BodyKit(BodyKitType.SEDAN,ColorType.WHITE,DoorNumberType.FOUR), new Engine("2.0 TDI","140HP",FuelType.DIESEL),GearBoxType.AUTOMATIC,2014,new BigDecimal(15000),false));
+        cars.add(new Audi("Audi","A3",new BodyKit(BodyKitType.HATCHBACK,ColorType.RED,DoorNumberType.TWO), new Engine("1.8 TDI","180HP",FuelType.GASOLINE),GearBoxType.MANUAL,2010,new BigDecimal(10000),true));
     }
 
     public ArrayList<Salesman> getSalesmensList() {
@@ -90,7 +105,78 @@ public class Shop {
         System.out.println("2. List available cars");
         System.out.println("3. List rented cars");
         System.out.println("4. Check income");
-        System.out.println("5. Logout");
-        System.out.println("6. Exit");
+        System.out.println("5. Filter by:");
+        System.out.println("6. Logout");
+        System.out.println("7. Exit");
     }
+
+
+
+
+    private void exit() {
+    }
+
+
+
+    public void wantToRentACar() {
+        System.out.println ( "Rent a Car? Yes / No " );
+        String answer = scan.next ();
+        if (answer.equalsIgnoreCase ( "Yes" )) {
+          //  rentAcar ();
+        } else if (answer.equalsIgnoreCase ( "no" ))
+            showMenu ();
+    }
+
+    public void filterByMake() {
+        System.out.println("Type the make you want to rent :");
+        String makeAnswer = scan.next();
+        List<Car> filtredMake = new ArrayList<>();
+        for (Car car : cars) {
+            if (car.getMake().equalsIgnoreCase(makeAnswer)) {
+                filtredMake.add(car);
+            }
+
+        }
+        System.out.println("Cars filtred by  : " + makeAnswer);
+        System.out.println(filtredMake.toString());
+
+        if (makeAnswer.isEmpty()) {
+            System.out.println("We dont have that car");
+        }
+
+    }
+    
+    public void showAllCars() {
+        for (Car car : cars) {
+            System.out.println ( car.toString () );
+        }
+    }
+    public void showAvaibleCars() {
+        for (Car car
+                : cars) {
+            if (!car.getRented()) {
+                System.out.println ( car.toString () );
+
+
+            }
+
+        }
+    }
+
+    public void showRentedCars() {
+        for (Car car : cars
+                ) {
+            if (car.getRented ()) {
+                System.out.println ( car.toString () );
+            }
+
+        }
+
+    }
+
+
+
+
+
 }
+

@@ -23,5 +23,6 @@ public class Engine {
     }
 
     public FuelType getFuelType() {
-        return fuelType;    }
+        return fuelType;
+    }
 }
