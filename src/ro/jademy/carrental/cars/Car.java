@@ -1,7 +1,6 @@
 package ro.jademy.carrental.cars;
 
 
-import ro.jademy.carrental.cars.components.GearBox;
 import ro.jademy.carrental.cars.components.BodyKit;
 import ro.jademy.carrental.cars.components.Engine;
 import ro.jademy.carrental.cars.components.gearbox.GearBoxType;
