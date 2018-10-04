@@ -4,7 +4,7 @@ package ro.jademy.carrental.cars.components.body;
 public enum BodyKitType {
     SEDAN("Sedan"),
     COUPE("Coupe"),
-    HATCHBACK("Hatchback"),,
+    HATCHBACK("Hatchback"),
     SUV("SUV");
 
     private String bodyType;

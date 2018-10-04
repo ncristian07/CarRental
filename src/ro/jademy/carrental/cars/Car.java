@@ -4,7 +4,6 @@ package ro.jademy.carrental.cars;
 import ro.jademy.carrental.cars.components.GearBox;
 import ro.jademy.carrental.cars.components.BodyKit;
 import ro.jademy.carrental.cars.components.Engine;
-import ro.jademy.carrental.cars.components.gearbox.GearBoxType;
 
 import java.math.BigDecimal;
 
@@ -34,9 +33,8 @@ public abstract class Car {
         this.rented = rented;
     }
 
-    public Car(){
+    public Car(){}
 
-    }
 
     //setters
 
@@ -66,6 +64,10 @@ public abstract class Car {
 
     public void setBasePrice(BigDecimal basePrice) {
         this.basePrice = basePrice;
+    }
+
+    public void setRented(Boolean rented) {
+        this.rented = rented;
     }
 
     @Override
