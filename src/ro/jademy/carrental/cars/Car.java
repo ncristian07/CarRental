@@ -4,6 +4,7 @@ package ro.jademy.carrental.cars;
 import ro.jademy.carrental.cars.components.GearBox;
 import ro.jademy.carrental.cars.components.BodyKit;
 import ro.jademy.carrental.cars.components.Engine;
+import ro.jademy.carrental.cars.components.gearbox.GearBoxType;
 
 import java.math.BigDecimal;
 
@@ -16,13 +17,13 @@ public abstract class Car {
     private String model;
     private BodyKit bodyKit;
     private Engine engine;
-    private GearBox boxType;
+    private GearBoxType boxType;
     private Integer year;
     private BigDecimal basePrice;
     private Boolean rented;
 
 
-    public Car(String make, String model, BodyKit bodyKit, Engine engine, GearBox gearBox, Integer year, BigDecimal basePrice, Boolean rented) {
+    public Car(String make, String model, BodyKit bodyKit, Engine engine, GearBoxType gearBox, Integer year, BigDecimal basePrice, Boolean rented) {
         this.make = make;
         this.model = model;
         this.bodyKit = bodyKit;
@@ -32,8 +33,6 @@ public abstract class Car {
         this.basePrice = basePrice;
         this.rented = rented;
     }
-
-    public Car(){}
 
 
     //setters
@@ -54,7 +53,7 @@ public abstract class Car {
         this.engine = engine;
     }
 
-    public void setBoxType(GearBox boxType) {
+    public void setBoxType(GearBoxType boxType) {
         this.boxType = boxType;
     }
 
@@ -73,18 +72,18 @@ public abstract class Car {
     @Override
     public String toString() {
         return "Car{" +
-                "Make='" + make + '\'' +
-                ", Model='" + model + '\'' +
-                ", BodyKit=" + bodyKit +
-                ", Engine=" + engine +
-                ", BoxType=" + boxType +
-                ", Year=" + year +
-                ", BasePrice=" + basePrice +
-                ", Rented=" + rented +
+                "make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", bodyKit=" + bodyKit +
+                ", engine=" + engine +
+                ", boxType=" + boxType +
+                ", year=" + year +
+                ", basePrice=" + basePrice +
+                ", rented=" + rented +
                 '}';
     }
 
-    //getters
+//getters
 
     public Boolean getRented() {
         return rented;
@@ -106,7 +105,7 @@ public abstract class Car {
         return engine;
     }
 
-    public GearBox getBoxType() {
+    public GearBoxType getBoxType() {
         return boxType;
     }
 

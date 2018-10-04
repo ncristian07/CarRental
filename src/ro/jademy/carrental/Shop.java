@@ -137,18 +137,6 @@ public class Shop {
             }
         }
     }
-
-    public void showListMenuOptions() {
-
-        System.out.println("Select one option:");
-        System.out.println("1. Filter by make");
-        System.out.println("2. Filter by model");
-        System.out.println("3. Filter by price");
-        System.out.println("0. Back to previous menu");
-
-
-    }
-
     public void showFilterMenu() {
         showListMenuOptions();
 
@@ -176,6 +164,17 @@ public class Shop {
             break;
 
         }
+    }
+
+    public void showListMenuOptions() {
+
+        System.out.println("Select one option:");
+        System.out.println("1. Filter by make");
+        System.out.println("2. Filter by model");
+        System.out.println("3. Filter by price");
+        System.out.println("0. Back to previous menu");
+
+
     }
 
     public void backTofirstMainMenu() {
